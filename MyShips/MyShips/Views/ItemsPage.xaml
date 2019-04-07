@@ -4,9 +4,14 @@
              x:Class="MyShips.Views.ItemsPage"
               Title="{Binding Title}"
              x:Name="BrowseItemsPage">
-
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="add.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
     </ContentPage.ToolbarItems>
 
     <StackLayout>
@@ -37,5 +42,4 @@
             </ListView.ItemTemplate>
         </ListView>
     </StackLayout>
-    
 </ContentPage>

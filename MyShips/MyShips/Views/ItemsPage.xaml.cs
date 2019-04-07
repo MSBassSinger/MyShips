@@ -13,6 +13,7 @@ using MyShips.ViewModels;
 
 namespace MyShips.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;

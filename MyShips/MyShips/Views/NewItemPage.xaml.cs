@@ -8,6 +8,7 @@ using MyShips.Models;
 
 namespace MyShips.Views
 {
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewItemPage : ContentPage
     {
         public Item Item { get; set; }

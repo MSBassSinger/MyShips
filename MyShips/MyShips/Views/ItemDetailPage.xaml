@@ -3,12 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MyShips.Views.ItemDetailPage"
              Title="{Binding Title}">
-
-    <StackLayout Spacing="20" Padding="15">
-        <Label Text="Text:" FontSize="Medium" />
-        <Label Text="{Binding Item.Text}" FontSize="Small"/>
-        <Label Text="Description:" FontSize="Medium" />
-        <Label Text="{Binding Item.Description}" FontSize="Small"/>
-    </StackLayout>
-    
+    <ScrollView Orientation="Both" Padding="0" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Default" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Default" >
+        <StackLayout Spacing="20" Padding="15">
+            <Label Text="Text:" FontSize="Medium" />
+            <Label Text="{Binding Item.Text}" FontSize="Small"/>
+            <Label Text="Description:" FontSize="Medium" />
+            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="More Info:" FontSize="Medium" />
+            <Label Text="{Binding Item.LongDescription}" FontSize="Small" LineBreakMode="WordWrap"/>
+            <ContentView Padding="80,80,80,80" VerticalOptions="FillAndExpand" >
+                <Image Source="{Binding Item.PictureName}" Aspect="Fill" VerticalOptions="Center" />
+            </ContentView>
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
