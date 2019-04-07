@@ -4,16 +4,18 @@
              x:Class="MyShips.Views.ItemDetailPage"
              Title="{Binding Title}">
     <ScrollView Orientation="Both" Padding="0" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Default" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Default" >
-        <StackLayout Spacing="20" Padding="15">
+        <StackLayout Spacing="20" Padding="15" Orientation="Vertical">
             <Label Text="Text:" FontSize="Medium" />
-            <Label Text="{Binding Item.Text}" FontSize="Small"/>
+            <Label Text="{Binding Item.Text}" FontSize="Small" LineBreakMode="WordWrap"/>
             <Label Text="Description:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Small"/>
+            <Label Text="{Binding Item.Description}" FontSize="Small" LineBreakMode="WordWrap"/>
             <Label Text="More Info:" FontSize="Medium" />
             <Label Text="{Binding Item.LongDescription}" FontSize="Small" LineBreakMode="WordWrap"/>
-            <ContentView Padding="80,80,80,80" VerticalOptions="FillAndExpand" >
-                <Image Source="{Binding Item.PictureName}" Aspect="Fill" VerticalOptions="Center" />
-            </ContentView>
+            <Image Source="{Binding Item.PictureName}" 
+                       Aspect="AspectFit"  
+                       VerticalOptions="Center" 
+                       HeightRequest="160" 
+                       WidthRequest="160" />
         </StackLayout>
     </ScrollView>
 </ContentPage>
