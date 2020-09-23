@@ -1,21 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyShips.Views.ItemDetailPage"
-             Title="{Binding Title}">
-    <ScrollView Orientation="Both" Padding="0" VerticalOptions="FillAndExpand" VerticalScrollBarVisibility="Default" HorizontalOptions="FillAndExpand" HorizontalScrollBarVisibility="Default" >
-        <StackLayout Spacing="20" Padding="15" Orientation="Vertical">
-            <Label Text="Text:" FontSize="Medium" />
-            <Label Text="{Binding Item.Text}" FontSize="Small" LineBreakMode="WordWrap"/>
-            <Label Text="Description:" FontSize="Medium" />
-            <Label Text="{Binding Item.Description}" FontSize="Small" LineBreakMode="WordWrap"/>
-            <Label Text="More Info:" FontSize="Medium" />
-            <Label Text="{Binding Item.LongDescription}" FontSize="Small" LineBreakMode="WordWrap"/>
-            <Image Source="{Binding Item.PictureName}" 
-                       Aspect="AspectFit"  
-                       VerticalOptions="Center" 
-                       HeightRequest="160" 
-                       WidthRequest="160" />
-        </StackLayout>
-    </ScrollView>
+<ContentPage
+	x:Class="MyShips.Views.ItemDetailPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="{Binding Title}">
+	<ScrollView
+		Padding="0"
+		HorizontalOptions="FillAndExpand"
+		HorizontalScrollBarVisibility="Default"
+		Orientation="Both"
+		VerticalOptions="FillAndExpand"
+		VerticalScrollBarVisibility="Default">
+		<StackLayout
+			Padding="15"
+			Orientation="Vertical"
+			Spacing="20">
+			<Label
+				FontAttributes="Bold"
+				FontSize="Medium"
+				Text="Text:"
+				TextColor="Black" />
+			<Label
+				FontSize="Small"
+				LineBreakMode="WordWrap"
+				Text="{Binding Item.Text}"
+				TextColor="Black" />
+			<Label
+				FontAttributes="Bold"
+				FontSize="Medium"
+				Text="Description:"
+				TextColor="Black" />
+			<Label
+				FontSize="Small"
+				LineBreakMode="WordWrap"
+				Text="{Binding Item.Description}"
+				TextColor="Black" />
+			<Label
+				FontAttributes="Bold"
+				FontSize="Medium"
+				Text="More Info:"
+				TextColor="Black" />
+			<Label
+				FontSize="Small"
+				LineBreakMode="WordWrap"
+				Text="{Binding Item.LongDescription}"
+				TextColor="Black" />
+			<Image
+				Aspect="AspectFit"
+				HeightRequest="160"
+				Source="{Binding Item.PictureName}"
+				VerticalOptions="Center"
+				WidthRequest="160" />
+		</StackLayout>
+	</ScrollView>
 </ContentPage>

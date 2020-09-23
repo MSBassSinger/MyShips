@@ -1,32 +1,46 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="MyShips.Views.NewItemPage"
-             Title="New Item">
-    
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Cancel" Clicked="Cancel_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="cancel.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-        <ToolbarItem Text="Save" Clicked="Save_Clicked">
-            <ToolbarItem.Icon>
-                <OnPlatform x:TypeArguments="FileImageSource">
-                    <On Platform="UWP" Value="save.png"/>
-                </OnPlatform>
-            </ToolbarItem.Icon>
-        </ToolbarItem>
-    </ContentPage.ToolbarItems>
-    
-    <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="Text" FontSize="Medium" />
-            <Entry Text="{Binding Item.Text}" FontSize="Small" />
-            <Label Text="Description" FontSize="Medium" />
-            <Editor Text="{Binding Item.Description}" FontSize="Small" Margin="0" />
-        </StackLayout>
-    </ContentPage.Content>
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage
+	x:Class="MyShips.Views.NewItemPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="New Item">
+
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Clicked="Cancel_Clicked" Text="Cancel">
+			<ToolbarItem.Icon>
+				<OnPlatform x:TypeArguments="FileImageSource">
+					<On Platform="UWP" Value="cancel.png" />
+				</OnPlatform>
+			</ToolbarItem.Icon>
+		</ToolbarItem>
+		<ToolbarItem Clicked="Save_Clicked" Text="Save">
+			<ToolbarItem.Icon>
+				<OnPlatform x:TypeArguments="FileImageSource">
+					<On Platform="UWP" Value="save.png" />
+				</OnPlatform>
+			</ToolbarItem.Icon>
+		</ToolbarItem>
+	</ContentPage.ToolbarItems>
+
+	<ContentPage.Content>
+		<StackLayout Padding="15" Spacing="20">
+			<Label
+				FontSize="Medium"
+				Text="Text"
+				TextColor="Black" />
+			<Entry
+				FontSize="Small"
+				Text="{Binding Item.Text}"
+				TextColor="White" />
+			<Label
+				FontSize="Medium"
+				Text="Description"
+				TextColor="Black" />
+			<Editor
+				Margin="0"
+				FontSize="Small"
+				Text="{Binding Item.Description}"
+				TextColor="White" />
+		</StackLayout>
+	</ContentPage.Content>
 </ContentPage>

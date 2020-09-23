@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Web.Mvc;
 using Microsoft.AspNetCore.Mvc;
+//using Microsoft.AspNetCore.Mvc;
 
 using MyShips.Models;
 
@@ -16,27 +18,27 @@ namespace MyShips.Controllers
             ItemRepository = itemRepository;
         }
 
-        [HttpGet]
-        public IActionResult List()
+        [Microsoft.AspNetCore.Mvc.HttpGet]
+        public Microsoft.AspNetCore.Mvc.ActionResult List()
         {
-            return Ok(ItemRepository.GetAll());
+            //return Ok(ItemRepository.GetAll());
         }
 
-        [HttpGet("{id}")]
+        [Microsoft.AspNetCore.Mvc.HttpGet()]
         public Item GetItem(string id)
         {
             Item item = ItemRepository.Get(id);
             return item;
         }
 
-        [HttpPost]
-        public IActionResult Create([FromBody]Item item)
+        [Microsoft.AspNetCore.Mvc.HttpPost]
+        public Microsoft.AspNetCore.Mvc.ActionResult Create([FromBody]Item item)
         {
             try
             {
                 if (item == null || !ModelState.IsValid)
                 {
-                    return BadRequest("Invalid State");
+                    //return BadRequestObjectResult("Invalid State");
                 }
 
                 ItemRepository.Add(item);
@@ -44,12 +46,12 @@ namespace MyShips.Controllers
             }
             catch (Exception)
             {
-                return BadRequest("Error while creating");
+                return BadRequestResult("Error while creating");
             }
             return Ok(item);
         }
 
-        [HttpPut]
+        [Microsoft.AspNetCore.Mvc.HttpPut]
         public IActionResult Edit([FromBody] Item item)
         {
             try
@@ -67,7 +69,7 @@ namespace MyShips.Controllers
             return NoContent();
         }
 
-        [HttpDelete("{id}")]
+        [Microsoft.AspNetCore.Mvc.HttpDelete("{id}")]
         public void Delete(string id)
         {
             ItemRepository.Remove(id);

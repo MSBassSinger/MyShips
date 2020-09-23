@@ -36,7 +36,7 @@ namespace MyShips.Services
                 new Item { Id = Guid.NewGuid().ToString(),
                            Text = "NNPS MINSY",
                            Description ="Naval Nuclear Power School",
-                           LongDescription = "Mare Island, CA Naval Shipyard.\r\n8 hours of class per day, and even study\r\nnotes were marked 'Classified'.  The school is closed down.",
+                           LongDescription = "Mare Island, CA Naval Shipyard.\r\n8 hours of class per day, and even study\r\nnotes were marked 'Classified'.\r\nThe school is closed down.",
                            Picture = new Xamarin.Forms.Image {Source = "nnpsminsy.jpg" },
                            PictureName = "nnpsminsy.jpg" },
                 new Item { Id = Guid.NewGuid().ToString(),
@@ -54,7 +54,7 @@ namespace MyShips.Services
                 new Item { Id = Guid.NewGuid().ToString(),
                            Text = "USS Nimitz CVN-68",
                            Description ="First-of-her-kind supercarrier.",
-                           LongDescription = "I am a plankowner.  The Nimitz was initially in Newport News\r\nshipyard to finish initial construction,\r\nthen once commissioned, stationed in Norfolk, VA.",
+                           LongDescription = "I am a plankowner.\r\nThe Nimitz was initially in Newport News\r\nshipyard to finish initial construction,\r\nthen once commissioned, stationed in Norfolk, VA.",
                            Picture = new Xamarin.Forms.Image {Source = "ussnimitz.jpg" },
                            PictureName = "ussnimitz.jpg" }
             };
