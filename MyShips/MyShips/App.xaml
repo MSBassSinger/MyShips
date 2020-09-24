@@ -11,6 +11,26 @@
 				<Setter Property="BarBackgroundColor" Value="{StaticResource NavigationPrimary}" />
 				<Setter Property="BarTextColor" Value="White" />
 			</Style>
-		</ResourceDictionary>
+
+            <Style x:Key="ItemHeader1Style" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="Title"/>
+            </Style>
+
+            <Style x:Key="ItemHeader2Style" TargetType="Label">
+                <Setter Property="TextColor" Value="Blue"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontAttributes" Value="Italic"/>
+                <Setter Property="FontSize" Value="Subtitle"/>
+            </Style>
+
+            <Style x:Key="ItemBodyStyle" TargetType="Label">
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="HorizontalOptions" Value="Start"/>
+                <Setter Property="FontSize" Value="Body"/>
+            </Style>
+
+        </ResourceDictionary>
 	</Application.Resources>
 </Application>

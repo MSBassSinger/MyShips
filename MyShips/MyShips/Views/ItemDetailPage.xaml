@@ -4,53 +4,35 @@
 	xmlns="http://xamarin.com/schemas/2014/forms"
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	Title="{Binding Title}">
-	<ScrollView
-		Padding="0"
-		HorizontalOptions="FillAndExpand"
-		HorizontalScrollBarVisibility="Default"
-		Orientation="Both"
-		VerticalOptions="FillAndExpand"
-		VerticalScrollBarVisibility="Default">
-		<StackLayout
-			Padding="15"
-			Orientation="Vertical"
-			Spacing="20">
-			<Label
-				FontAttributes="Bold"
-				FontSize="Medium"
-				Text="Text:"
-				TextColor="Black" />
-			<Label
-				FontSize="Small"
-				LineBreakMode="WordWrap"
-				Text="{Binding Item.Text}"
-				TextColor="Black" />
-			<Label
-				FontAttributes="Bold"
-				FontSize="Medium"
-				Text="Description:"
-				TextColor="Black" />
-			<Label
-				FontSize="Small"
-				LineBreakMode="WordWrap"
-				Text="{Binding Item.Description}"
-				TextColor="Black" />
-			<Label
-				FontAttributes="Bold"
-				FontSize="Medium"
-				Text="More Info:"
-				TextColor="Black" />
-			<Label
-				FontSize="Small"
-				LineBreakMode="WordWrap"
-				Text="{Binding Item.LongDescription}"
-				TextColor="Black" />
-			<Image
-				Aspect="AspectFit"
-				HeightRequest="160"
-				Source="{Binding Item.PictureName}"
-				VerticalOptions="Center"
-				WidthRequest="160" />
-		</StackLayout>
-	</ScrollView>
+    <ScrollView>
+        <StackLayout Margin="20">
+
+            <Label Text="Location:" 
+				Style="{StaticResource ItemHeader1Style}" />
+
+            <Label Text="{Binding Item.Text}"
+                TextColor="Black"
+                Style="{DynamicResource BodyStyle}" />
+
+            <Label Text="Description:"
+				Style="{StaticResource ItemHeader2Style}" />
+
+            <Label Text="{Binding Item.Description}"
+                TextColor="Black"
+                 Style="{DynamicResource BodyStyle}" />
+
+            <Label Text="More Info:"
+				Style="{StaticResource ItemHeader2Style}" />
+
+            <Label Text="{Binding Item.LongDescription}"
+                TextColor="Black"
+                Style="{DynamicResource BodyStyle}" />
+
+            <Image Source="{Binding Item.PictureName}"
+                HeightRequest="200" 
+                WidthRequest="200" 
+                HorizontalOptions="CenterAndExpand" />
+
+        </StackLayout>
+    </ScrollView>
 </ContentPage>
