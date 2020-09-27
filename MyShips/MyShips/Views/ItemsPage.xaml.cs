@@ -13,41 +13,58 @@ using MyShips.ViewModels;
 
 namespace MyShips.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ItemsPage : ContentPage
-    {
-        ItemsViewModel viewModel;
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class ItemsPage : ContentPage
+	{
+		ItemsViewModel viewModel;
 
-        public ItemsPage()
-        {
-            InitializeComponent();
+		public ItemsPage()
+		{
+			InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
-        }
+			BindingContext = viewModel = new ItemsViewModel();
+		}
 
-        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
-        {
-            var item = args.SelectedItem as Item;
-            if (item == null)
-                return;
+		async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+		{
+			var item = args.SelectedItem as Item;
 
-            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+			if (item != null)
+			{
+				try
+				{
+					ItemDetailViewModel idvm = new ItemDetailViewModel(item);
 
-            // Manually deselect item.
-            ItemsListView.SelectedItem = null;
-        }
+					ItemDetailPage idp = new ItemDetailPage(idvm);
 
-        async void AddItem_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
-        }
+					await Navigation.PushAsync(idp);
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
+					// Manually deselect item.
+					ItemsListView.SelectedItem = null;
+				}
+				catch (Exception exUnhandled)
+				{
+					String x = exUnhandled.TargetSite.ToString();
+					exUnhandled.Data.Add("Item.ID", item?.Id);
+				}
+			}
+			else
+			{
+				return;
+			}
+		}
 
-            if (viewModel.Items.Count == 0)
-                viewModel.LoadItemsCommand.Execute(null);
-        }
-    }
+		async void AddItem_Clicked(object sender, EventArgs e)
+		{
+			await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+		}
+
+		protected override void OnAppearing()
+		{
+			base.OnAppearing();
+
+			if (viewModel.Items.Count == 0)
+				viewModel.LoadItemsCommand.Execute(null);
+		}
+	}
 }

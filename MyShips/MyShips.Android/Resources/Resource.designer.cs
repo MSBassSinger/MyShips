@@ -12250,28 +12250,22 @@ namespace MyShips.Droid
 			public const int view_offset_helper = 2131296559;
 			
 			// aapt resource value: 0x7F090130
-			public const int view_tree_lifecycle_owner = 2131296560;
+			public const int view_tree_saved_state_registry_owner = 2131296560;
 			
 			// aapt resource value: 0x7F090131
-			public const int view_tree_saved_state_registry_owner = 2131296561;
+			public const int visible = 2131296561;
 			
 			// aapt resource value: 0x7F090132
-			public const int view_tree_view_model_store_owner = 2131296562;
+			public const int visible_removing_fragment_view_tag = 2131296562;
 			
 			// aapt resource value: 0x7F090133
-			public const int visible = 2131296563;
+			public const int volume_item_container = 2131296563;
 			
 			// aapt resource value: 0x7F090134
-			public const int visible_removing_fragment_view_tag = 2131296564;
+			public const int withText = 2131296564;
 			
 			// aapt resource value: 0x7F090135
-			public const int volume_item_container = 2131296565;
-			
-			// aapt resource value: 0x7F090136
-			public const int withText = 2131296566;
-			
-			// aapt resource value: 0x7F090137
-			public const int wrap_content = 2131296567;
+			public const int wrap_content = 2131296565;
 			
 			static Id()
 			{

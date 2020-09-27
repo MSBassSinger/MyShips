@@ -11,13 +11,13 @@
 	</ContentPage.BindingContext>
 
 	<ContentPage.Resources>
-        <ResourceDictionary>
-            <!--  Page Level Resources: Compatible with Xamarin Live Player  -->
-            <Color x:Key="Primary">#2196F3</Color>
-            <Color x:Key="Accent">#96d1ff</Color>
-            <Color x:Key="LightTextColor">#999999</Color>
-        </ResourceDictionary>
-    </ContentPage.Resources>
+		<ResourceDictionary>
+			<!--  Page Level Resources: Compatible with Xamarin Live Player  -->
+			<Color x:Key="Primary">#2196F3</Color>
+			<Color x:Key="Accent">#96d1ff</Color>
+			<Color x:Key="LightTextColor">#999999</Color>
+		</ResourceDictionary>
+	</ContentPage.Resources>
 
 	<Grid>
 		<Grid.RowDefinitions>
@@ -65,8 +65,8 @@
 					<Label.FormattedText>
 						<FormattedString>
 							<FormattedString.Spans>
-								<Span Text="This app is written in C# and native APIs using the" TextColor="Black" />
-								<Span Text=" " />
+								<Span Text="This native mobile app is written in XAML (UI), C# (business logic) and " TextColor="Black" />
+								<Span Text="utilizing native APIs using the "  TextColor="Black"/>
 								<Span
 									FontAttributes="Bold"
 									Text="Xamarin Platform"
@@ -80,25 +80,148 @@
 					<Label.FormattedText>
 						<FormattedString>
 							<FormattedString.Spans>
-								<Span Text="It shares code with its" TextColor="Black" />
-								<Span Text=" " />
+								<Span Text="One codebase - three versions: " TextColor="Black" />
 								<Span
 									FontAttributes="Bold"
-									Text="iOS, Android, and Windows"
+									Text="iOS, Android, and Windows."
 									TextColor="Black" />
-								<Span Text=" " />
-								<Span Text="versions." />
 							</FormattedString.Spans>
 						</FormattedString>
 					</Label.FormattedText>
 				</Label>
+
+				<Frame OutlineColor="Blue" HasShadow="True" BackgroundColor="LightCyan">
+					<Label Text="Attributes found on Startup" 
+				       FontAttributes="Bold" 
+					   TextDecorations="Underline" 
+					   TextColor="Black"
+					   BackgroundColor="LightCyan"
+					   HorizontalOptions="Center" 
+					   VerticalOptions="Center"/>
+				</Frame>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Device Type: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding DeviceType}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Manufacturer: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding Manufacturer}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Model: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding Model}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Name: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding Name}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Platform: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding Platform}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Version: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding Version}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Start Time: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding StartTime}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Processor Count: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding ProcessorCount}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="App Name: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding AppName}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
+				<Label Style="{DynamicResource BodyStyle}">
+					<Label.FormattedText>
+						<FormattedString>
+							<FormattedString.Spans>
+								<Span Text="Battery Level: " TextColor="Black" FontAttributes="Bold"/>
+								<Span Text="{Binding BatteryLevel}" TextColor="Blue" />
+							</FormattedString.Spans>
+						</FormattedString>
+					</Label.FormattedText>
+				</Label>
+
 				<Button
 					Margin="0,10,0,0"
 					BackgroundColor="{StaticResource Primary}"
 					Command="{Binding OpenWebCommand}"
 					Text="Learn more"
 					TextColor="White" />
+
 			</StackLayout>
+
 		</ScrollView>
 	</Grid>
+
+
+
 </ContentPage>

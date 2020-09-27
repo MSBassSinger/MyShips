@@ -24,14 +24,19 @@ namespace MyShips.Views
         {
             InitializeComponent();
 
-            var item = new Item
+            var item = new Item 
             {
-                Text = "Item 1",
-                Description = "This is an item description."
+                Id = Guid.NewGuid().ToString(),
+                Text = "",
+                //Description = "",
+                //LongDescription = "",
+                //PictureName = "",
+                //Picture = null
             };
 
             viewModel = new ItemDetailViewModel(item);
             BindingContext = viewModel;
         }
-    }
+
+	}
 }

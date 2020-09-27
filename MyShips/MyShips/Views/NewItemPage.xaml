@@ -31,16 +31,28 @@
 			<Entry
 				FontSize="Small"
 				Text="{Binding Item.Text}"
-				TextColor="White" />
+				TextColor="Black" 
+				BackgroundColor="White"/>
 			<Label
 				FontSize="Medium"
-				Text="Description"
+				Text="Brief Description"
 				TextColor="Black" />
 			<Editor
 				Margin="0"
 				FontSize="Small"
 				Text="{Binding Item.Description}"
-				TextColor="White" />
+				TextColor="Black" 
+				BackgroundColor="White" />
+			<Label
+				FontSize="Medium"
+				Text="Long Description"
+				TextColor="Black" />
+			<Editor
+				Margin="0"
+				FontSize="Small"
+				Text="{Binding Item.LongDescription}"
+				TextColor="Black" 
+				BackgroundColor="White" />
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

@@ -20,7 +20,7 @@
     <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <PackageCertificateKeyFile>
     </PackageCertificateKeyFile>
-    <PackageCertificateThumbprint>9D3EF673495B50793E80F4234AAF3E743B2AE180</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>C2F906F79776AB95A646C9AA5F9CF440F2A754E0</PackageCertificateThumbprint>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
@@ -161,6 +161,9 @@
     <PackageReference Include="Plugin.Fingerprint">
       <Version>2.1.1</Version>
     </PackageReference>
+    <PackageReference Include="System.Diagnostics.PerformanceCounter">
+      <Version>4.7.0</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Essentials">
       <Version>1.5.3.2</Version>
     </PackageReference>
@@ -175,6 +178,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="MyShips.UWP_KeyFile.pfx" />
     <None Include="MyShips.UWP_TemporaryKey.pfx" />
     <None Include="MyShipsKeyFile.pfx" />
   </ItemGroup>
@@ -185,7 +189,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>MyShipsKeyFile.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>MyShips.UWP_KeyFile.pfx</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
 </Project>

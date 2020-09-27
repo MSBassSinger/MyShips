@@ -3,8 +3,11 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using Xamarin.Essentials;
 using MyShips.Models;
+using System.Text.Json;
+using System.IO;
+
 
 namespace MyShips.Views
 {
@@ -19,8 +22,10 @@ namespace MyShips.Views
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+                Id = Guid.NewGuid().ToString(),
+                Text = "",
+                Description = "",
+                LongDescription = ""
             };
 
             BindingContext = this;
@@ -28,7 +33,23 @@ namespace MyShips.Views
 
         async void Save_Clicked(object sender, EventArgs e)
         {
+            String fileFolder = FileSystem.AppDataDirectory;
+
+            String fileName = Item.Text.Replace(" ", "_").Replace("/", "_").Replace(@"\", "_") + ".item";
+
+            String fullFileName = fileFolder + "/" + fileName;
+
+            if (Device.RuntimePlatform == Device.UWP)
+            {
+                fullFileName = fileFolder + @"\" + fileName;
+            }
+
+            String jsonValue = JsonSerializer.Serialize<Item>(Item);
+
+            File.WriteAllText(fullFileName, jsonValue);
+
             MessagingCenter.Send(this, "AddItem", Item);
+
             await Navigation.PopModalAsync();
         }
 
