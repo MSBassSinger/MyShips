@@ -69,7 +69,8 @@ namespace MyShips.Services
             }
 
             // Check to see if any items were saved.
-            String fileFolder = FileSystem.AppDataDirectory;
+
+            String fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
             String[] filesFound = Directory.GetFiles(fileFolder, "*.item");
 
@@ -77,23 +78,32 @@ namespace MyShips.Services
             {
                 if (filesFound.Length > 0)
                 {
-                    foreach (String fileName in filesFound)
+                    String encryptionKey = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionKey].ToString();
+
+                    String encryptionSeed = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionSeed].ToString();
+
+                    if ((encryptionKey.Length >= 32) && (encryptionSeed.Length >= 8))
                     {
-                        String fileContents = File.ReadAllText(fileName);
-
-                        Item fileItem = JsonSerializer.Deserialize<Item>(fileContents);
-
-                        if (String.IsNullOrWhiteSpace(fileItem.Id))
+                        foreach (String fileName in filesFound)
                         {
-                            fileItem.Id = Guid.NewGuid().ToString();
-                        }
+                            String fileContents = File.ReadAllText(fileName);
 
-                        items.Add(fileItem);
+                            CryptoMgr encryptMgr = new CryptoMgr(encryptionKey, encryptionSeed);
+
+                            String decryptedString = encryptMgr.DecryptStringAES(fileContents);
+
+                            Item fileItem = JsonSerializer.Deserialize<Item>(decryptedString);
+
+                            if (String.IsNullOrWhiteSpace(fileItem.Id))
+                            {
+                                fileItem.Id = Guid.NewGuid().ToString();
+                            }
+
+                            items.Add(fileItem);
+                        }
                     }
 				}
 			}
-
-            //ContextMgr.Instance.ContextValues.Add("MockDataStoreItems", items);
 
         }
 

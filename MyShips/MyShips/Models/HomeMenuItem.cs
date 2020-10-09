@@ -7,7 +7,8 @@ namespace MyShips.Models
     public enum MenuItemType
     {
         Browse,
-        About
+        About,
+        Settings
     }
     public class HomeMenuItem
     {

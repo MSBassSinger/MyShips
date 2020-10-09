@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+	x:Class="MyShips.Views.SettingsPage"
+	xmlns="http://xamarin.com/schemas/2014/forms"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	Title="{Binding Title}">
+	<ContentPage.Content>
+		<ScrollView>
+			<StackLayout>
+				<Label x:Name="lblEncryptionKey" Text="Encryption Key (32 or more characters)" TextColor="Black" />
+				<Entry
+				x:Name="txtEncryptionKey"
+				Completed="txtEncryptionKey_Completed"
+				Placeholder="Enter encryption key"
+				Text="{Binding Settings.EncryptionKey}"
+				TextChanged="txtEncryptionKey_TextChanged" 
+				TextColor="LightCyan"
+				BackgroundColor="Black"/>
+
+				<Label x:Name="lblEncryptionSeed" Text="Encryption Seed (8 or more characters)" TextColor="Black"/>
+				<Entry
+				x:Name="txtEncryptionSeed"
+				Completed="txtEncryptionSeed_Completed"
+				Placeholder="Enter encryption seed"
+				Text="{Binding Settings.EncryptionSeed}"
+				TextChanged="txtEncryptionSeed_TextChanged" 
+				TextColor="LightCyan"
+				BackgroundColor="Black"/>
+
+				<Button
+				x:Name="btnSave"
+				Clicked="btnSave_Clicked"
+				IsEnabled="False"
+				Text="Save" />
+
+			</StackLayout>
+		</ScrollView>
+	</ContentPage.Content>
+</ContentPage>

@@ -6,34 +6,35 @@
 	Title="{Binding Title}">
 
 	<ScrollView>
-        <StackLayout Margin="20">
+		<StackLayout Margin="20">
 
-            <Label Text="Location:" 
-				Style="{StaticResource ItemHeader1Style}" />
+			<Label Style="{StaticResource ItemHeader1Style}" Text="Location:" />
 
-            <Label Text="{Binding Item.Text}"
-                TextColor="Black"
-                Style="{DynamicResource BodyStyle}" />
+			<Label
+				Style="{DynamicResource BodyStyle}"
+				Text="{Binding Item.Text}"
+				TextColor="Black" />
 
-            <Label Text="Description:"
-				Style="{StaticResource ItemHeader2Style}" />
+			<Label Style="{StaticResource ItemHeader2Style}" Text="Description:" />
 
-            <Label Text="{Binding Item.Description}"
-                TextColor="Black"
-                 Style="{DynamicResource BodyStyle}" />
+			<Label
+				Style="{DynamicResource BodyStyle}"
+				Text="{Binding Item.Description}"
+				TextColor="Black" />
 
-            <Label Text="More Info:"
-				Style="{StaticResource ItemHeader2Style}" />
+			<Label Style="{StaticResource ItemHeader2Style}" Text="More Info:" />
 
-            <Label Text="{Binding Item.LongDescription}"
-                TextColor="Black"
-                Style="{DynamicResource BodyStyle}" />
+			<Label
+				Style="{DynamicResource BodyStyle}"
+				Text="{Binding Item.LongDescription}"
+				TextColor="Black" />
 
-            <Image Source="{Binding Item.PictureName}"
-                HeightRequest="200" 
-                WidthRequest="200" 
-                HorizontalOptions="CenterAndExpand" />
+			<Image
+				HeightRequest="200"
+				HorizontalOptions="CenterAndExpand"
+				Source="{Binding Item.PictureName}"
+				WidthRequest="200" />
 
-        </StackLayout>
-    </ScrollView>
+		</StackLayout>
+	</ScrollView>
 </ContentPage>

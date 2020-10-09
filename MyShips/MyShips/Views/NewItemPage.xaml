@@ -29,30 +29,32 @@
 				Text="Text"
 				TextColor="Black" />
 			<Entry
+				BackgroundColor="White"
 				FontSize="Small"
 				Text="{Binding Item.Text}"
-				TextColor="Black" 
-				BackgroundColor="White"/>
+				TextColor="Black" />
 			<Label
 				FontSize="Medium"
 				Text="Brief Description"
 				TextColor="Black" />
 			<Editor
 				Margin="0"
+				BackgroundColor="White"
 				FontSize="Small"
 				Text="{Binding Item.Description}"
-				TextColor="Black" 
-				BackgroundColor="White" />
+				TextColor="Black"  
+				AutoSize="TextChanges"/>
 			<Label
 				FontSize="Medium"
 				Text="Long Description"
 				TextColor="Black" />
 			<Editor
 				Margin="0"
+				BackgroundColor="White"
 				FontSize="Small"
 				Text="{Binding Item.LongDescription}"
 				TextColor="Black" 
-				BackgroundColor="White" />
+				AutoSize="TextChanges"/>
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>

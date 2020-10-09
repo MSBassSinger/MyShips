@@ -44,7 +44,9 @@ namespace MyShips.Views
 				}
 				catch (Exception exUnhandled)
 				{
+
 					String x = exUnhandled.TargetSite.ToString();
+
 					exUnhandled.Data.Add("Item.ID", item?.Id);
 				}
 			}
@@ -56,7 +58,18 @@ namespace MyShips.Views
 
 		async void AddItem_Clicked(object sender, EventArgs e)
 		{
-			await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+			String encryptionKey = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionKey].ToString();
+
+			String encryptionSeed = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionSeed].ToString();
+
+			if ((encryptionKey.Length >= 32) && (encryptionSeed.Length >= 8))
+			{
+				await Navigation.PushModalAsync(new NavigationPage(new NewItemPage()));
+			}
+			else
+			{
+				await DisplayAlert("Encryption Settings Missing", "Before you can add new items, you must open the Settings page and setup an encryption key and seed to encrypt the item data.", "OK", "Cancel");
+			}
 		}
 
 		protected override void OnAppearing()

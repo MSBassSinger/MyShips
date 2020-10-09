@@ -35,18 +35,25 @@ namespace MyShips.Views
         {
             String fileFolder = FileSystem.AppDataDirectory;
 
+            fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
+
             String fileName = Item.Text.Replace(" ", "_").Replace("/", "_").Replace(@"\", "_") + ".item";
 
-            String fullFileName = fileFolder + "/" + fileName;
-
-            if (Device.RuntimePlatform == Device.UWP)
-            {
-                fullFileName = fileFolder + @"\" + fileName;
-            }
+            String fullFileName = Path.Combine(fileFolder, fileName);
 
             String jsonValue = JsonSerializer.Serialize<Item>(Item);
 
-            File.WriteAllText(fullFileName, jsonValue);
+            String encryptionKey = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionKey].ToString();
+
+            String encryptionSeed = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionSeed].ToString();
+
+            CryptoMgr encryptMgr = new CryptoMgr(encryptionKey, encryptionSeed);
+
+            String encryptedString = encryptMgr.EncryptStringAES(jsonValue);
+
+           
+
+            File.WriteAllText(fullFileName, encryptedString);
 
             MessagingCenter.Send(this, "AddItem", Item);
 

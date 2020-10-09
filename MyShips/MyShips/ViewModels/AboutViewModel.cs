@@ -117,7 +117,7 @@ namespace MyShips.ViewModels
 		{
 			get
 			{
-				Double retVal = (Double)ContextMgr.Instance.ContextValues["BatteryLevel"];
+				Double retVal = Math.Abs((Double)ContextMgr.Instance.ContextValues["BatteryLevel"]);
 
 				return $"{retVal.ToString("P")}";
 			}

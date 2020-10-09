@@ -49,7 +49,15 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation = global::MyShips.Droid.Resource.Animation.btn_radio_to_on_mtrl_dot_group_animation;
 			global::Plugin.Fingerprint.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation = global::MyShips.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_animation;
 			global::Plugin.Fingerprint.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation = global::MyShips.Droid.Resource.Animation.btn_radio_to_on_mtrl_ring_outer_path_animation;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_close_enter = global::MyShips.Droid.Resource.Animation.fragment_close_enter;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_close_exit = global::MyShips.Droid.Resource.Animation.fragment_close_exit;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_fade_enter = global::MyShips.Droid.Resource.Animation.fragment_fade_enter;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_fade_exit = global::MyShips.Droid.Resource.Animation.fragment_fade_exit;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_fast_out_extra_slow_in = global::MyShips.Droid.Resource.Animation.fragment_fast_out_extra_slow_in;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_open_enter = global::MyShips.Droid.Resource.Animation.fragment_open_enter;
+			global::Plugin.Fingerprint.Resource.Animation.fragment_open_exit = global::MyShips.Droid.Resource.Animation.fragment_open_exit;
 			global::Plugin.Fingerprint.Resource.Array.crypto_fingerprint_fallback_prefixes = global::MyShips.Droid.Resource.Array.crypto_fingerprint_fallback_prefixes;
+			global::Plugin.Fingerprint.Resource.Array.crypto_fingerprint_fallback_vendors = global::MyShips.Droid.Resource.Array.crypto_fingerprint_fallback_vendors;
 			global::Plugin.Fingerprint.Resource.Array.hide_fingerprint_instantly_prefixes = global::MyShips.Droid.Resource.Array.hide_fingerprint_instantly_prefixes;
 			global::Plugin.Fingerprint.Resource.Attribute.actionBarDivider = global::MyShips.Droid.Resource.Attribute.actionBarDivider;
 			global::Plugin.Fingerprint.Resource.Attribute.actionBarItemBackground = global::MyShips.Droid.Resource.Attribute.actionBarItemBackground;
@@ -337,6 +345,8 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Color.abc_btn_colored_borderless_text_material = global::MyShips.Droid.Resource.Color.abc_btn_colored_borderless_text_material;
 			global::Plugin.Fingerprint.Resource.Color.abc_btn_colored_text_material = global::MyShips.Droid.Resource.Color.abc_btn_colored_text_material;
 			global::Plugin.Fingerprint.Resource.Color.abc_color_highlight_material = global::MyShips.Droid.Resource.Color.abc_color_highlight_material;
+			global::Plugin.Fingerprint.Resource.Color.abc_decor_view_status_guard = global::MyShips.Droid.Resource.Color.abc_decor_view_status_guard;
+			global::Plugin.Fingerprint.Resource.Color.abc_decor_view_status_guard_light = global::MyShips.Droid.Resource.Color.abc_decor_view_status_guard_light;
 			global::Plugin.Fingerprint.Resource.Color.abc_hint_foreground_material_dark = global::MyShips.Droid.Resource.Color.abc_hint_foreground_material_dark;
 			global::Plugin.Fingerprint.Resource.Color.abc_hint_foreground_material_light = global::MyShips.Droid.Resource.Color.abc_hint_foreground_material_light;
 			global::Plugin.Fingerprint.Resource.Color.abc_primary_text_disable_only_material_dark = global::MyShips.Droid.Resource.Color.abc_primary_text_disable_only_material_dark;
@@ -357,6 +367,8 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Color.abc_tint_switch_track = global::MyShips.Droid.Resource.Color.abc_tint_switch_track;
 			global::Plugin.Fingerprint.Resource.Color.accent_material_dark = global::MyShips.Droid.Resource.Color.accent_material_dark;
 			global::Plugin.Fingerprint.Resource.Color.accent_material_light = global::MyShips.Droid.Resource.Color.accent_material_light;
+			global::Plugin.Fingerprint.Resource.Color.androidx_core_ripple_material_light = global::MyShips.Droid.Resource.Color.androidx_core_ripple_material_light;
+			global::Plugin.Fingerprint.Resource.Color.androidx_core_secondary_text_default_material_light = global::MyShips.Droid.Resource.Color.androidx_core_secondary_text_default_material_light;
 			global::Plugin.Fingerprint.Resource.Color.background_floating_material_dark = global::MyShips.Droid.Resource.Color.background_floating_material_dark;
 			global::Plugin.Fingerprint.Resource.Color.background_floating_material_light = global::MyShips.Droid.Resource.Color.background_floating_material_light;
 			global::Plugin.Fingerprint.Resource.Color.background_material_dark = global::MyShips.Droid.Resource.Color.background_material_dark;
@@ -728,6 +740,7 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Id.fingerprint_icon = global::MyShips.Droid.Resource.Id.fingerprint_icon;
 			global::Plugin.Fingerprint.Resource.Id.fingerprint_subtitle = global::MyShips.Droid.Resource.Id.fingerprint_subtitle;
 			global::Plugin.Fingerprint.Resource.Id.forever = global::MyShips.Droid.Resource.Id.forever;
+			global::Plugin.Fingerprint.Resource.Id.fragment_container_view_tag = global::MyShips.Droid.Resource.Id.fragment_container_view_tag;
 			global::Plugin.Fingerprint.Resource.Id.FUNCTION = global::MyShips.Droid.Resource.Id.FUNCTION;
 			global::Plugin.Fingerprint.Resource.Id.group_divider = global::MyShips.Droid.Resource.Id.group_divider;
 			global::Plugin.Fingerprint.Resource.Id.home = global::MyShips.Droid.Resource.Id.home;
@@ -811,6 +824,8 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Id.uniform = global::MyShips.Droid.Resource.Id.uniform;
 			global::Plugin.Fingerprint.Resource.Id.up = global::MyShips.Droid.Resource.Id.up;
 			global::Plugin.Fingerprint.Resource.Id.useLogo = global::MyShips.Droid.Resource.Id.useLogo;
+			global::Plugin.Fingerprint.Resource.Id.view_tree_saved_state_registry_owner = global::MyShips.Droid.Resource.Id.view_tree_saved_state_registry_owner;
+			global::Plugin.Fingerprint.Resource.Id.visible_removing_fragment_view_tag = global::MyShips.Droid.Resource.Id.visible_removing_fragment_view_tag;
 			global::Plugin.Fingerprint.Resource.Id.withText = global::MyShips.Droid.Resource.Id.withText;
 			global::Plugin.Fingerprint.Resource.Id.wrap_content = global::MyShips.Droid.Resource.Id.wrap_content;
 			global::Plugin.Fingerprint.Resource.Integer.abc_config_activityDefaultDur = global::MyShips.Droid.Resource.Integer.abc_config_activityDefaultDur;
@@ -1173,6 +1188,7 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_DialogWhenLarge = global::MyShips.Droid.Resource.Style.Theme_AppCompat_DialogWhenLarge;
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Dialog_Alert = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Dialog_Alert;
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Dialog_MinWidth = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Dialog_MinWidth;
+			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Empty = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Empty;
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Light = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Light;
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Light_DarkActionBar = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Light_DarkActionBar;
 			global::Plugin.Fingerprint.Resource.Style.Theme_AppCompat_Light_Dialog = global::MyShips.Droid.Resource.Style.Theme_AppCompat_Light_Dialog;
@@ -1530,6 +1546,13 @@ namespace MyShips.Droid
 			global::Plugin.Fingerprint.Resource.Styleable.FontFamily_fontProviderFetchTimeout = global::MyShips.Droid.Resource.Styleable.FontFamily_fontProviderFetchTimeout;
 			global::Plugin.Fingerprint.Resource.Styleable.FontFamily_fontProviderPackage = global::MyShips.Droid.Resource.Styleable.FontFamily_fontProviderPackage;
 			global::Plugin.Fingerprint.Resource.Styleable.FontFamily_fontProviderQuery = global::MyShips.Droid.Resource.Styleable.FontFamily_fontProviderQuery;
+			global::Plugin.Fingerprint.Resource.Styleable.Fragment = global::MyShips.Droid.Resource.Styleable.Fragment;
+			global::Plugin.Fingerprint.Resource.Styleable.FragmentContainerView = global::MyShips.Droid.Resource.Styleable.FragmentContainerView;
+			global::Plugin.Fingerprint.Resource.Styleable.FragmentContainerView_android_name = global::MyShips.Droid.Resource.Styleable.FragmentContainerView_android_name;
+			global::Plugin.Fingerprint.Resource.Styleable.FragmentContainerView_android_tag = global::MyShips.Droid.Resource.Styleable.FragmentContainerView_android_tag;
+			global::Plugin.Fingerprint.Resource.Styleable.Fragment_android_id = global::MyShips.Droid.Resource.Styleable.Fragment_android_id;
+			global::Plugin.Fingerprint.Resource.Styleable.Fragment_android_name = global::MyShips.Droid.Resource.Styleable.Fragment_android_name;
+			global::Plugin.Fingerprint.Resource.Styleable.Fragment_android_tag = global::MyShips.Droid.Resource.Styleable.Fragment_android_tag;
 			global::Plugin.Fingerprint.Resource.Styleable.GradientColor = global::MyShips.Droid.Resource.Styleable.GradientColor;
 			global::Plugin.Fingerprint.Resource.Styleable.GradientColorItem = global::MyShips.Droid.Resource.Styleable.GradientColorItem;
 			global::Plugin.Fingerprint.Resource.Styleable.GradientColorItem_android_color = global::MyShips.Droid.Resource.Styleable.GradientColorItem_android_color;
@@ -7492,7 +7515,10 @@ namespace MyShips.Droid
 			public const int crypto_fingerprint_fallback_prefixes = 2130903040;
 			
 			// aapt resource value: 0x7F030001
-			public const int hide_fingerprint_instantly_prefixes = 2130903041;
+			public const int crypto_fingerprint_fallback_vendors = 2130903041;
+			
+			// aapt resource value: 0x7F030002
+			public const int hide_fingerprint_instantly_prefixes = 2130903042;
 			
 			static Array()
 			{
