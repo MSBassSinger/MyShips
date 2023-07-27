@@ -10,11 +10,24 @@ using MyShips.Views;
 
 namespace MyShips.ViewModels
 {
+    /// <summary>
+    /// ViewModel for the collection of Item instances
+    /// </summary>
     public class ItemsViewModel : BaseViewModel
     {
+        /// <summary>
+        /// Internal collection
+        /// </summary>
         public ObservableCollection<Item> Items { get; set; }
+
+        /// <summary>
+        /// Command that loads the items, set in the constructor
+        /// </summary>
         public Command LoadItemsCommand { get; set; }
 
+        /// <summary>
+        /// Construtor
+        /// </summary>
         public ItemsViewModel()
         {
             Title = "Browse";
@@ -29,6 +42,10 @@ namespace MyShips.ViewModels
             });
         }
 
+        /// <summary>
+        /// Loads the items to the collection from the DataStore.
+        /// </summary>
+        /// <returns></returns>
         async Task ExecuteLoadItemsCommand()
         {
             if (IsBusy)

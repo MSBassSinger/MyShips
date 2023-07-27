@@ -4,19 +4,28 @@ using System.Text;
 
 namespace MyShips.Models
 {
+	/// <summary>
+	/// Class to hold encruption keys.
+	/// </summary>
 	public class SettingsModel
 	{
-
+		/// <summary>
+		/// The key and seed strings.
+		/// </summary>
 		private String m_EncryptionKey = "";
-
 		private String m_EncryptionSeed = "";
 
+		/// <summary>
+		/// Constructor.
+		/// </summary>
 		public SettingsModel()
 		{
 
 		}
 
-
+		/// <summary>
+		/// Encryption key, typically 32 characters or longer.
+		/// </summary>
 		public String EncryptionKey
 		{
 			get
@@ -30,6 +39,9 @@ namespace MyShips.Models
 			}
 		}
 
+		/// <summary>
+		/// Encruption seed, typically 8 characters or longer.
+		/// </summary>
 		public String EncryptionSeed
 		{
 			get

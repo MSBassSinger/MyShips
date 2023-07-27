@@ -10,13 +10,23 @@ using Xamarin.Forms;
 
 namespace MyShips.Services
 {
+    /// <summary>
+    /// Used to store items for the demo.
+    /// </summary>
     public class MockDataStore : IDataStore<Item>
     {
-        List<Item> items;
+        /// <summary>
+        /// Holds the items to be viewed, edited, saved, or deleted.
+        /// </summary>
+        List<Item> m_Items;
 
+        /// <summary>
+        /// Constructor.
+        /// Creates the default data.
+        /// </summary>
         public MockDataStore()
         {
-            items = new List<Item>();
+            m_Items = new List<Item>();
             var mockItems = new List<Item>
             {
                 new Item { Id = Guid.NewGuid().ToString(),
@@ -65,19 +75,29 @@ namespace MyShips.Services
 
             foreach (var item in mockItems)
             {
-                items.Add(item);
+                m_Items.Add(item);
             }
 
             // Check to see if any items were saved.
 
             String fileFolder = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData);
 
-            String[] filesFound = Directory.GetFiles(fileFolder, "*.item");
+            String[] filesFound = null;
+
+            try
+            {
+                filesFound = Directory.GetFiles(fileFolder, "*.item", SearchOption.TopDirectoryOnly);
+            }
+            catch
+            {
+                filesFound = null;
+            }
 
             if (filesFound != null)
             {
                 if (filesFound.Length > 0)
                 {
+                    // User-added items are encrypted.
                     String encryptionKey = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionKey].ToString();
 
                     String encryptionSeed = ContextMgr.Instance.ContextValues[MyShips.Properties.Resources.EncryptionSeed].ToString();
@@ -99,7 +119,7 @@ namespace MyShips.Services
                                 fileItem.Id = Guid.NewGuid().ToString();
                             }
 
-                            items.Add(fileItem);
+                            m_Items.Add(fileItem);
                         }
                     }
 				}
@@ -107,38 +127,64 @@ namespace MyShips.Services
 
         }
 
+        /// <summary>
+        /// Used to add an item.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task<bool> AddItemAsync(Item item)
         {
-            items.Add(item);
+            m_Items.Add(item);
 
             return await Task.FromResult(true);
         }
 
+
+        /// <summary>
+        /// Updates an existing item by remiving the old one, and adding the new one.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateItemAsync(Item item)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
-            items.Remove(oldItem);
-            items.Add(item);
+            var oldItem = m_Items.Where((Item arg) => arg.Id == item.Id).FirstOrDefault();
+            m_Items.Remove(oldItem);
+            m_Items.Add(item);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<bool> DeleteItemAsync(string id)
+        /// <summary>
+        /// Removes a specified item if it exists.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<bool> DeleteItemAsync(String id)
         {
-            var oldItem = items.Where((Item arg) => arg.Id == id).FirstOrDefault();
-            items.Remove(oldItem);
+            var oldItem = m_Items.Where((Item arg) => arg.Id == id).FirstOrDefault();
+            m_Items.Remove(oldItem);
 
             return await Task.FromResult(true);
         }
 
-        public async Task<Item> GetItemAsync(string id)
+        /// <summary>
+        /// Gets an item by id
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
+        public async Task<Item> GetItemAsync(String id)
         {
-            return await Task.FromResult(items.FirstOrDefault(s => s.Id == id));
+            return await Task.FromResult(m_Items.FirstOrDefault(s => s.Id == id));
         }
 
-        public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
+        /// <summary>
+        /// Gets all the items.
+        /// </summary>
+        /// <param name="forceRefresh"></param>
+        /// <returns></returns>
+        public async Task<IEnumerable<Item>> GetItemsAsync(Boolean forceRefresh = false)
         {
-            return await Task.FromResult(items);
+            return await Task.FromResult(m_Items);
         }
     }
 }

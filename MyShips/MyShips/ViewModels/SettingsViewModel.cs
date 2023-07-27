@@ -5,6 +5,9 @@ using System.Text;
 
 namespace MyShips.ViewModels
 {
+	/// <summary>
+	/// Class for an instance to hold settings for viewing.
+	/// </summary>
 	public class SettingsViewModel : BaseViewModel
 	{
 
