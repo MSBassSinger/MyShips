@@ -9,4 +9,5 @@ The images were acquired beforehand.  This is an abbreviated example to show wha
 do in Xamarin Forms given a short time, to illustrate that I could do more complex 
 Xamarin Forms projects given more time.
 
-The aspp was recently updatyed in about 6 hours to targte Xamarin Forms 4.8
+The aspp was updated in about 6 hours to targte Xamarin Forms 4.8, then lately a couple of hours 
+to Xamarin.Forms 5.0.
