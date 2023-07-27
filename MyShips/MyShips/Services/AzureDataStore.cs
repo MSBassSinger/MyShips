@@ -8,11 +8,18 @@ using MyShips.Models;
 
 namespace MyShips.Services
 {
+    /// <summary>
+    /// Class whose instance handles storing items in Azure.
+    /// The URL for Azure Storage or other storage is needed.
+    /// </summary>
     public class AzureDataStore : IDataStore<Item>
     {
         HttpClient client;
         IEnumerable<Item> items;
 
+        /// <summary>
+        /// Constructor
+        /// </summary>
         public AzureDataStore()
         {
             client = new HttpClient();
@@ -21,6 +28,11 @@ namespace MyShips.Services
             items = new List<Item>();
         }
 
+        /// <summary>
+        /// Gets all the items.
+        /// </summary>
+        /// <param name="forceRefresh"></param>
+        /// <returns></returns>
         public async Task<IEnumerable<Item>> GetItemsAsync(bool forceRefresh = false)
         {
             if (forceRefresh)
@@ -32,6 +44,11 @@ namespace MyShips.Services
             return items;
         }
 
+        /// <summary>
+        /// Gets one item by id.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<Item> GetItemAsync(string id)
         {
             if (id != null)
@@ -43,6 +60,11 @@ namespace MyShips.Services
             return null;
         }
 
+        /// <summary>
+        /// Adds an item to the storage in Azure.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task<bool> AddItemAsync(Item item)
         {
             if (item == null)
@@ -55,6 +77,11 @@ namespace MyShips.Services
             return response.IsSuccessStatusCode;
         }
 
+        /// <summary>
+        /// Updates an edited item using the async Http PUT command.
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         public async Task<bool> UpdateItemAsync(Item item)
         {
             if (item == null || item.Id == null)
@@ -69,6 +96,11 @@ namespace MyShips.Services
             return response.IsSuccessStatusCode;
         }
 
+        /// <summary>
+        /// Deletes an item from Azure Storage, if it exists.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns></returns>
         public async Task<bool> DeleteItemAsync(string id)
         {
             if (string.IsNullOrEmpty(id))

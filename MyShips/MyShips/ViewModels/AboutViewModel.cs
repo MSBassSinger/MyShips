@@ -5,17 +5,26 @@ using Xamarin.Forms;
 
 namespace MyShips.ViewModels
 {
+	/// <summary>
+	/// Viewmodel for the About page.
+	/// </summary>
 	public class AboutViewModel : BaseViewModel
 	{
+		/// <summary>
+		/// Brings up an external page about Xamarin Forms
+		/// </summary>
 		public AboutViewModel()
 		{
 			Title = "About";
 
-			OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
-		}
+			//OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenWebCommand = new Command(() => Launcher.OpenAsync(new Uri("https://xamarin.com/platform")));
+        }
 
-		//ContextMgr.Instance.ContextValues.Add("DeviceType", DeviceInfo.DeviceType);
-		public String DeviceType
+		/// <summary>
+		/// Gets the name of the device type
+		/// </summary>
+        public String DeviceType
 		{
 			get
 			{
@@ -25,7 +34,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("Manufacturer", DeviceInfo.Manufacturer);
+		/// <summary>
+		/// Returns the Manufacturer name 
+		/// </summary>
 		public String Manufacturer
 		{
 			get
@@ -36,7 +47,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("Model", DeviceInfo.Model);
+		/// <summary>
+		/// Returns the Model name.
+		/// </summary>
 		public String Model
 		{
 			get
@@ -47,7 +60,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("Name", DeviceInfo.Name);
+		/// <summary>
+		/// Returns the name.
+		/// </summary>
 		public String Name
 		{
 			get
@@ -58,7 +73,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("Platform", DeviceInfo.Platform);
+		/// <summary>
+		/// Returns platform information
+		/// </summary>
 		public String Platform
 		{
 			get
@@ -69,7 +86,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("Version", DeviceInfo.VersionString);
+		/// <summary>
+		/// Returns a version number.
+		/// </summary>
 		public String Version
 		{
 			get
@@ -80,7 +99,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("StartTime", DateTime.Now);
+		/// <summary>
+		/// Returns the date and time the instance started.
+		/// </summary>
 		public String StartTime
 		{
 			get
@@ -91,7 +112,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("ProcessorCount", Environment.ProcessorCount);
+		/// <summary>
+		/// Returns with the number of processors available.
+		/// </summary>
 		public String ProcessorCount
 		{
 			get
@@ -102,7 +125,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
-		//ContextMgr.Instance.ContextValues.Add("AppName", Xamarin.Essentials.AppInfo.Name);
+		/// <summary>
+		/// Returns the app name
+		/// </summary>
 		public String AppName
 		{
 			get
@@ -112,7 +137,10 @@ namespace MyShips.ViewModels
 				return retVal;
 			}
 		}
-		//ContextMgr.Instance.ContextValues.Add("BatteryLevel", Xamarin.Essentials.Battery.ChargeLevel* 100);
+		
+		/// <summary>
+		/// returns the batter level of the mobile device.
+		/// </summary>
 		public String BatteryLevel
 		{
 			get
@@ -123,6 +151,9 @@ namespace MyShips.ViewModels
 			}
 		}
 
+		/// <summary>
+		/// This is set in the constructor.
+		/// </summary>
 		public ICommand OpenWebCommand { get; }
 	}
 }

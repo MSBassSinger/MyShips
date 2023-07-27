@@ -51,11 +51,18 @@ namespace MyShips.Views
 
             String encryptedString = encryptMgr.EncryptStringAES(jsonValue);
 
-           
 
-            File.WriteAllText(fullFileName, encryptedString);
+            try
+            {
+                File.WriteAllText(fullFileName, encryptedString);
 
-            MessagingCenter.Send(this, "AddItem", Item);
+                MessagingCenter.Send(this, "AddItem", Item);
+
+            }
+            catch (Exception exUnhandled)
+            {
+                await DisplayAlert("Unable to save the item.", $"The error message is: [{exUnhandled.Message}].", "OK", "Cancel");
+            }
 
             await Navigation.PopModalAsync();
         }
